@@ -229,8 +229,18 @@
                             <i class="fas fa-sign-in-alt mr-2"></i> MASUK SEBAGAI
                         </h5>
                         <div class="list-group list-group-flush">
-                            <a href="https://siujang.esdm.go.id/Pelayanan-Perizinan" class="list-group-item list-group-item-action"> BADAN USAHA SI UJANG GATRIK</a>
-                            <a href="https://siujang.esdm.go.id/Login" class="list-group-item list-group-item-action"> TT DAN PJT SI UJANG GATRIK</a>
+                            <a href="{{ route('admin.login') }}" class="list-group-item list-group-item-action">
+                                <i class="fas fa-user-shield mr-2"></i> LOGIN ADMIN PANEL
+                                <i class="fas fa-arrow-right float-right text-primary"></i>
+                            </a>
+                            <a href="https://siujang.esdm.go.id/Pelayanan-Perizinan" class="list-group-item list-group-item-action" target="_blank">
+                                <i class="fas fa-building mr-2"></i> BADAN USAHA SI UJANG GATRIK
+                                <i class="fas fa-external-link-alt float-right text-muted"></i>
+                            </a>
+                            <a href="https://siujang.esdm.go.id/Login" class="list-group-item list-group-item-action" target="_blank">
+                                <i class="fas fa-sign-in-alt mr-2"></i> TT DAN PJT SI UJANG GATRIK
+                                <i class="fas fa-external-link-alt float-right text-muted"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

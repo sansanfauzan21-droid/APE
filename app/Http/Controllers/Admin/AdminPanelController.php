@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Backend\Utilities\ContactForm;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class AdminPanelController extends Controller
 {
     public function index()
     {

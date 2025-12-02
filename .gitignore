@@ -10,4 +10,15 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/public/build
+/public/buildgit rm -r --cached vendor/
+git rm -r --cached node_modules/
+git rm --cached .env
+
+# Tambahkan .gitignore yang baru
+git add .gitignore
+
+# Commit perubahan
+git commit -m "Add .gitignore and remove large folders from tracking"
+
+# Push ulang
+git push -u origin main

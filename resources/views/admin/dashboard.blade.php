@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Admin Dashboard')
+
 @section('content')
 <div class="container-fluid">
     <!-- Welcome Hero Section -->
@@ -10,27 +12,24 @@
                     <div class="row align-items-center">
                         <div class="col-md-8">
                             <h2 class="text-white mb-3">
-                                <i class="fas fa-crown mr-2"></i>
-                                Selamat Datang di Dashboard Super Admin
+                                <i class="fas fa-user-shield mr-2"></i>
+                                Selamat Datang di Dashboard Admin
                             </h2>
                             <p class="text-white-50 mb-4 lead">
-                                Kelola konten website PT ALIANSI PRIMA ENERGI dengan mudah dan efisien.
-                                Pantau statistik penting dan akses fitur utama dari sini.
+                                Kelola pesan masuk dari contact form dengan mudah dan efisien.
+                                Balas pertanyaan pelanggan dan kelola komunikasi perusahaan.
                             </p>
                             <div class="d-flex flex-wrap gap-2">
-                                <a href="{{ route('home.hero.index') }}" class="btn btn-light btn-lg">
-                                    <i class="fas fa-image mr-1"></i> Kelola Hero
+                                <a href="{{ route('admin.contact-form.index') }}" class="btn btn-light btn-lg">
+                                    <i class="fas fa-envelope mr-1"></i> Kelola Pesan
                                 </a>
-                                <a href="{{ route('home.about.index') }}" class="btn btn-outline-light btn-lg">
-                                    <i class="fas fa-info-circle mr-1"></i> Edit About
-                                </a>
-                                <a href="{{ route('company.index') }}" class="btn btn-outline-light btn-lg">
-                                    <i class="fas fa-building mr-1"></i> Company Info
+                                <a href="{{ route('admin.profile.index') }}" class="btn btn-outline-light btn-lg">
+                                    <i class="fas fa-user mr-1"></i> Profile Saya
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-4 text-center">
-                            <i class="fas fa-tachometer-alt text-white" style="font-size: 8rem; opacity: 0.3;"></i>
+                            <i class="fas fa-envelope text-white" style="font-size: 8rem; opacity: 0.3;"></i>
                         </div>
                     </div>
                 </div>
@@ -38,262 +37,133 @@
         </div>
     </div>
 
-    <!-- Company Profile Statistics -->
+    <!-- Statistics Cards -->
     <div class="row">
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-gradient-primary">
-                <div class="inner">
-                    <h3>{{ \App\Models\Backend\Home\HomeContent::count() }}</h3>
-                    <p>Home Content Sections</p>
-                    <div class="progress">
-                        <div class="progress-bar bg-white" style="width: {{ \App\Models\Backend\Home\HomeContent::count() > 0 ? '100' : '0' }}%"></div>
-                    </div>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <a href="{{ route('home-content.index') }}" class="small-box-footer">
-                    Manage Content <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-gradient-success">
-                <div class="inner">
-                    <h3>{{ \App\Models\Backend\Home\SbuImage::count() }}</h3>
-                    <p>SBU Images</p>
-                    <div class="progress">
-                        <div class="progress-bar bg-white" style="width: {{ \App\Models\Backend\Home\SbuImage::count() > 0 ? '100' : '0' }}%"></div>
-                    </div>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-images"></i>
-                </div>
-                <a href="{{ route('home.sbu-image.index') }}" class="small-box-footer">
-                    Manage Images <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-gradient-warning">
-                <div class="inner">
-                    <h3>{{ \App\Models\Backend\Home\Highlight::count() }}</h3>
-                    <p>Highlights</p>
-                    <div class="progress">
-                        <div class="progress-bar bg-white" style="width: {{ \App\Models\Backend\Home\Highlight::count() > 0 ? '100' : '0' }}%"></div>
-                    </div>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-star"></i>
-                </div>
-                <a href="{{ route('home.highlight.index') }}" class="small-box-footer">
-                    Manage Highlights <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-4 col-6">
             <div class="small-box bg-gradient-info">
                 <div class="inner">
-                    <h3>{{ \App\Models\Backend\Utilities\Review::count() }}</h3>
-                    <p>Customer Reviews</p>
+                    <h3>{{ $totalMessages }}</h3>
+                    <p>Total Pesan Masuk</p>
                     <div class="progress">
-                        <div class="progress-bar bg-white" style="width: {{ \App\Models\Backend\Utilities\Review::count() > 0 ? '100' : '0' }}%"></div>
-                    </div>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <a href="{{ route('review.index') }}" class="small-box-footer">
-                    Manage Reviews <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Content Management Statistics -->
-    <div class="row">
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-gradient-secondary">
-                <div class="inner">
-                    <h3>{{ \App\Models\Backend\Utilities\ContactForm::count() }}</h3>
-                    <p>Contact Form Submissions</p>
-                    <div class="progress">
-                        <div class="progress-bar bg-white" style="width: {{ \App\Models\Backend\Utilities\ContactForm::count() > 0 ? '100' : '0' }}%"></div>
+                        <div class="progress-bar bg-white" style="width: {{ $totalMessages > 0 ? '100' : '0' }}%"></div>
                     </div>
                 </div>
                 <div class="icon">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <a href="{{ route('contact-form.index') }}" class="small-box-footer">
-                    View Messages <i class="fas fa-arrow-circle-right"></i>
+                <a href="{{ route('admin.contact-form.index') }}" class="small-box-footer">
+                    Lihat Semua <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
 
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-gradient-dark">
+        <div class="col-lg-4 col-6">
+            <div class="small-box bg-gradient-warning">
                 <div class="inner">
-                    <h3>{{ \App\Models\Backend\Regulation::count() }}</h3>
-                    <p>Legal Documents</p>
+                    <h3>{{ $unreadMessages }}</h3>
+                    <p>Pesan Belum Dibaca</p>
                     <div class="progress">
-                        <div class="progress-bar bg-white" style="width: {{ \App\Models\Backend\Regulation::count() > 0 ? '100' : '0' }}%"></div>
+                        <div class="progress-bar bg-white" style="width: {{ $totalMessages > 0 ? round(($unreadMessages / $totalMessages) * 100) : '0' }}%"></div>
                     </div>
                 </div>
                 <div class="icon">
-                    <i class="fas fa-file-alt"></i>
+                    <i class="fas fa-envelope-open"></i>
                 </div>
-                <a href="{{ route('regulations.index') }}" class="small-box-footer">
-                    Manage Documents <i class="fas fa-arrow-circle-right"></i>
+                <a href="{{ route('admin.contact-form.index') }}" class="small-box-footer">
+                    Lihat Pesan <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
 
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-gradient-light">
+        <div class="col-lg-4 col-6">
+            <div class="small-box bg-gradient-success">
                 <div class="inner">
-                    <h3>{{ \App\Models\User::count() }}</h3>
-                    <p>System Users</p>
+                    <h3>{{ $totalMessages - $unreadMessages }}</h3>
+                    <p>Pesan Sudah Dibaca</p>
                     <div class="progress">
-                        <div class="progress-bar bg-dark" style="width: {{ \App\Models\User::count() > 0 ? '100' : '0' }}%"></div>
+                        <div class="progress-bar bg-white" style="width: {{ $totalMessages > 0 ? round((($totalMessages - $unreadMessages) / $totalMessages) * 100) : '0' }}%"></div>
                     </div>
                 </div>
                 <div class="icon">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-check-circle"></i>
                 </div>
-                <a href="#" class="small-box-footer">
-                    User Management <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-gradient-danger">
-                <div class="inner">
-                    <h3>{{ \Spatie\Permission\Models\Role::count() }}</h3>
-                    <p>User Roles</p>
-                    <div class="progress">
-                        <div class="progress-bar bg-white" style="width: {{ \Spatie\Permission\Models\Role::count() > 0 ? '100' : '0' }}%"></div>
-                    </div>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-user-tag"></i>
-                </div>
-                <a href="#" class="small-box-footer">
-                    Role Settings <i class="fas fa-arrow-circle-right"></i>
+                <a href="{{ route('admin.contact-form.index') }}" class="small-box-footer">
+                    Lihat Detail <i class="fas fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Quick Actions and Recent Activity -->
+    <!-- Recent Messages -->
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="card-title mb-0"><i class="fas fa-bolt mr-2"></i> Quick Actions - Company Profile</h3>
+                <div class="card-header bg-info text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-clock mr-2"></i> Pesan Terbaru</h3>
+                </div>
+                <div class="card-body">
+                    @if($recentMessages->count() > 0)
+                        <div class="list-group">
+                            @foreach($recentMessages as $message)
+                                <div class="list-group-item">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">{{ $message->name }}</h5>
+                                        <small>{{ $message->created_at->diffForHumans() }}</small>
+                                    </div>
+                                    <p class="mb-1">{{ Str::limit($message->subject, 50) }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">{{ $message->email }}</small>
+                                        <div>
+                                            @if($message->is_read)
+                                                <span class="badge bg-success">Dibaca</span>
+                                            @else
+                                                <span class="badge bg-warning">Belum Dibaca</span>
+                                            @endif
+                                            <a href="{{ route('admin.contact-form.show', $message->id) }}" class="btn btn-sm btn-primary ml-2">Lihat</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    @else
+                        <div class="text-center py-4">
+                            <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                            <p class="text-muted">Belum ada pesan masuk.</p>
+                        </div>
+                    @endif
+                </div>
+                @if($recentMessages->count() > 0)
+                    <div class="card-footer">
+                        <a href="{{ route('admin.contact-form.index') }}" class="btn btn-info btn-block">
+                            <i class="fas fa-list mr-1"></i> Lihat Semua Pesan
+                        </a>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title mb-0"><i class="fas fa-bolt mr-2"></i> Aksi Cepat</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4 col-6">
-                            <a href="{{ route('home.hero.index') }}" class="btn btn-outline-primary btn-block mb-3">
-                                <i class="fas fa-image fa-2x mb-2"></i><br>
-                                <strong>Kelola Hero</strong>
+                        <div class="col-md-6">
+                            <a href="{{ route('admin.contact-form.index') }}" class="btn btn-outline-primary btn-block mb-3">
+                                <i class="fas fa-envelope fa-2x mb-2"></i><br>
+                                <strong>Kelola Contact Form</strong>
                             </a>
                         </div>
-                        <div class="col-md-4 col-6">
-                            <a href="{{ route('home.about.index') }}" class="btn btn-outline-success btn-block mb-3">
-                                <i class="fas fa-info-circle fa-2x mb-2"></i><br>
-                                <strong>Edit About</strong>
+                        <div class="col-md-6">
+                            <a href="{{ route('admin.contact-form.index', ['type' => 'complaints']) }}" class="btn btn-outline-warning btn-block mb-3">
+                                <i class="fas fa-exclamation-triangle fa-2x mb-2"></i><br>
+                                <strong>Lihat Keluhan & Masalah</strong>
                             </a>
                         </div>
-                        <div class="col-md-4 col-6">
-                            <a href="{{ route('home.highlight.index') }}" class="btn btn-outline-warning btn-block mb-3">
-                                <i class="fas fa-star fa-2x mb-2"></i><br>
-                                <strong>Manage Highlights</strong>
-                            </a>
-                        </div>
-                        <div class="col-md-4 col-6">
-                            <a href="{{ route('home-content.index') }}" class="btn btn-outline-info btn-block mb-3">
-                                <i class="fas fa-edit fa-2x mb-2"></i><br>
-                                <strong>Edit Home Content</strong>
-                            </a>
-                        </div>
-                        <div class="col-md-4 col-6">
-                            <a href="{{ route('home.sbu-image.index') }}" class="btn btn-outline-secondary btn-block mb-3">
-                                <i class="fas fa-images fa-2x mb-2"></i><br>
-                                <strong>Manage SBU Images</strong>
-                            </a>
-                        </div>
-                        <div class="col-md-4 col-6">
-                            <a href="{{ route('company.index') }}" class="btn btn-outline-dark btn-block mb-3">
-                                <i class="fas fa-building fa-2x mb-2"></i><br>
-                                <strong>Edit Company Info</strong>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header bg-success text-white">
-                    <h3 class="card-title mb-0"><i class="fas fa-chart-line mr-2"></i> System Overview</h3>
-                </div>
-                <div class="card-body">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-info"><i class="fas fa-cog"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">System Status</span>
-                            <span class="info-box-number">Active</span>
-                        </div>
-                    </div>
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success"><i class="fas fa-server"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Server Uptime</span>
-                            <span class="info-box-number">99.9%</span>
-                        </div>
-                    </div>
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-warning"><i class="fas fa-database"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Database</span>
-                            <span class="info-box-number">Healthy</span>
-                        </div>
-                    </div>
-                    <div class="info-box">
-                        <span class="info-box-icon bg-danger"><i class="fas fa-shield-alt"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Security</span>
-                            <span class="info-box-number">Secure</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Utilities Quick Actions -->
-            <div class="card mt-3">
-                <div class="card-header bg-info text-white">
-                    <h3 class="card-title mb-0"><i class="fas fa-cogs mr-2"></i> Utilities</h3>
-                </div>
-                <div class="card-body">
-                    <div class="d-grid gap-2">
-                        <a href="{{ route('regulations.index') }}" class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-file-alt mr-1"></i> Regulations
-                        </a>
-                        <a href="{{ route('contact-form.index') }}" class="btn btn-outline-success btn-sm">
-                            <i class="fas fa-envelope mr-1"></i> Contact Forms
-                        </a>
-                        <a href="{{ route('review.index') }}" class="btn btn-outline-warning btn-sm">
-                            <i class="fas fa-comments mr-1"></i> Reviews
-                        </a>
-                        <a href="{{ route('blog.index') }}" class="btn btn-outline-info btn-sm">
-                            <i class="fas fa-blog mr-1"></i> Blog Posts
-                        </a>
                     </div>
                 </div>
             </div>

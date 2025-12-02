@@ -46,6 +46,13 @@ Route::controller(App\Http\Controllers\Backend\DashboardController::class)->pref
     Route::post('/clear-activities', 'clearActivities')->name('clear-activities');
 });
 
+/* Admin Login Routes */
+Route::prefix('admin-login')->name('admin.')->group(function () {
+    Route::get('/', [App\Http\Controllers\Admin\AuthController::class, 'index'])->name('login');
+    Route::post('/authenticate', [App\Http\Controllers\Admin\AuthController::class, 'authenticate'])->name('login.authenticate');
+    Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
+});
+
 /* Admin Routes */
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:super-admin'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
@@ -58,6 +65,14 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:super-admin'])
 
     // Role management routes
     Route::resource('roles', App\Http\Controllers\Admin\RoleController::class);
+});
+
+/* Admin Contact Form Routes */
+Route::prefix('admin-contact')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\Admin\AdminPanelController::class, 'index'])->name('dashboard');
+    Route::get('/contact-form', [App\Http\Controllers\Admin\ContactFormController::class, 'index'])->name('contact-form.index');
+    Route::get('/contact-form/{id}', [App\Http\Controllers\Admin\ContactFormController::class, 'show'])->name('contact-form.show');
+    Route::post('/contact-form/{id}/reply', [App\Http\Controllers\Admin\ContactFormController::class, 'reply'])->name('contact-form.reply');
 });
 
 /* Company Profile */
