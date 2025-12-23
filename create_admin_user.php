@@ -10,16 +10,16 @@ use Illuminate\Support\Facades\Hash;
 
 try {
     $user = new User();
-    $user->name = 'Admin Contact';
-    $user->email = 'admin@contact.com';
-    $user->password = Hash::make('password123');
+    $user->name = 'Admin User';
+    $user->email = 'admin123@gmail.com';
+    $user->password = Hash::make('rahasia123');
     $user->save();
 
-    $user->assignRole('admin');
+    $user->assignRole('super-admin');
 
-    echo "Admin user created successfully!\n";
-    echo "Email: admin@contact.com\n";
-    echo "Password: password123\n";
+    echo "Super Admin user created successfully!\n";
+    echo "Email: admin123@gmail.com\n";
+    echo "Password: rahasia123\n";
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage() . "\n";
 }

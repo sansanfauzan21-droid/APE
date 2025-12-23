@@ -6,41 +6,46 @@ class StoreFileHelper
 {
     public static function storeLogos($name, $extension)
     {
-        return 'img/logos/' . $name . '.' . $extension;
+        return env('FILE_UPLOAD_IMG_BASE', 'img/') . 'logos/' . $name . '.' . $extension;
     }
 
     public static function storeIco($name, $extension)
     {
-        return 'ico/' . $name . '.' . $extension;
+        return env('FILE_UPLOAD_ICO_BASE', 'ico/') . $name . '.' . $extension;
     }
 
     public static function storeHeroImage($name, $extension)
     {
-        return 'img/hero/' . $name . '.' . $extension;
+        return env('FILE_UPLOAD_IMG_BASE', 'img/') . 'hero/' . $name . '.' . $extension;
     }
 
     public static function storeHighlightImage($name, $extension)
     {
-        return 'img/highlight/' . $name . '.' . $extension;
+        return env('FILE_UPLOAD_IMG_BASE', 'img/') . 'highlight/' . $name . '.' . $extension;
     }
 
     public static function storeReviewImage($name, $extension)
     {
-        return 'img/review/' . $name . '.' . $extension;
+        return env('FILE_UPLOAD_IMG_BASE', 'img/') . 'review/' . $name . '.' . $extension;
     }
 
     public static function storeFeatureImage($name, $extension)
     {
-        return 'img/feature/' . $name . '.' . $extension;
+        return env('FILE_UPLOAD_IMG_BASE', 'img/') . 'feature/' . $name . '.' . $extension;
     }
 
     public static function storeBlogImage($name, $extension)
     {
-        return 'img/blog/' . $name . '.' . $extension;
+        return env('FILE_UPLOAD_IMG_BASE', 'img/') . 'blog/' . $name . '.' . $extension;
     }
 
     public static function storeSbuImage($name)
     {
-        return 'assets/img/sbu/' . $name;
+        return env('FILE_UPLOAD_ASSETS_BASE', 'assets/') . 'img/sbu/' . $name;
+    }
+
+    public static function storeCompanyLicenseDocument()
+    {
+        return env('FILE_UPLOAD_DOCS_BASE', 'company-licenses');
     }
 }

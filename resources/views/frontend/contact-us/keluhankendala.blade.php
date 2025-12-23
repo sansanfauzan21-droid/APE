@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="step-number" style="width: 30px; height: 30px; background: rgba(0, 123, 255, 0.1); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 15px; color: #007bff; font-weight: 700; font-size: 1.2rem; margin-top: 25px;">1</div>
                                     <h5 style="color: #333; font-weight: 600; margin-bottom: 15px; font-size: 1.1rem;">Penerimaan</h5>
-                                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">Keluhan Anda diterima dan dicatat dalam sistem kami dengan nomor tiket unik</p>
+                                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">Keluhan Anda diterima dan dicatat dalam sistem kami</p>
                                     <div class="step-arrow" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); opacity: 0; transition: opacity 0.3s ease;">
                                         <i class="fas fa-chevron-right" style="color: #007bff; font-size: 1.2rem;"></i>
                                     </div>
@@ -212,7 +212,7 @@
 
 
     <!-- FAQ Section -->
-    <section class="faq-section" style="padding: 80px 0; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+    <!-- <section class="faq-section" style="padding: 80px 0; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center" data-aos="fade-up">
@@ -288,7 +288,7 @@
             </div>
         </div>
     </section>
-
+ -->
     <!-- Tips Section -->
     <section class="tips-section" style="padding: 80px 0; background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);">
         <div class="container">
@@ -309,18 +309,7 @@
                         <p style="color: #666; line-height: 1.6;">Berikan deskripsi yang lengkap tentang masalah yang Anda alami, termasuk kapan, di mana, dan bagaimana kejadiannya terjadi.</p>
                     </div>
                 </div>
-
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tips-card" style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(21, 101, 192, 0.15); height: 100%; transition: transform 0.3s;">
-                        <div class="tips-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);">
-                            <i class="fas fa-paperclip fa-2x" style="color: white;"></i>
-                        </div>
-                        <h5 style="color: #333; font-weight: 600; margin-bottom: 15px;">Lampirkan Bukti Pendukung</h5>
-                        <p style="color: #666; line-height: 1.6;">Jika memungkinkan, lampirkan foto, video, atau dokumen yang dapat mendukung keluhan Anda untuk mempercepat proses verifikasi.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="tips-card" style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(21, 101, 192, 0.15); height: 100%; transition: transform 0.3s;">
                         <div class="tips-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);">
                             <i class="fas fa-clock fa-2x" style="color: white;"></i>
@@ -331,6 +320,35 @@
                 </div>
             </div>
         </div>
+        
+    <!-- /*whatsapp button*/ -->
+    <a 
+        href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $company && $company->phone_number ? $company->phone_number : '62811205411') }}" 
+        class="whatsapp-float" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        data-aos="zoom-in"
+        data-aos-delay="600"
+        style="
+            background-color: #25D366; /* Warna WA */
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: fixed; 
+            right: 20px; 
+            bottom: 150px; 
+            z-index: 10000; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s;
+        "
+        onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 8px 15px rgba(0, 0, 0, 0.4)'"
+        onmouseout="this.style.transform='scale(1.0)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.4)'">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
     </section>
 
 @push('styles')
@@ -543,11 +561,70 @@
         opacity: 0.9;
     }
     }
+    /* Penyesuaian Mobile: membuatnya sedikit lebih kecil */
+    @media (max-width: 768px) {
+        /* ... (CSS mobile Anda yang sudah ada) ... */
+        
+        /* Tambahkan ini untuk mobile */
+        .whatsapp-float {
+            width: 50px !important; 
+            height: 50px !important;
+            right: 15px !important;
+            bottom: 15px !important;
+        }
+        .whatsapp-float i {
+            font-size: 1.5em !important; /* Ikon lebih kecil */
+        }
+    }
+
+    /* DEFINISI KEYFRAMES UNTUK GERAKAN NAIK-TURUN */
+    @keyframes float-wa {
+        0% {
+            /* Posisi awal: 0% dari gerakan */
+            transform: translateY(0); 
+        }
+        50% {
+            /* Posisi tengah: Naik 10px */
+            transform: translateY(-10px); 
+        }
+        100% {
+            /* Posisi akhir: Kembali ke 0% */
+            transform: translateY(0); 
+        }
+    }
+
+    /* Terapkan animasi pada tombol floating */
+    .whatsapp-float {
+        /* Tambahkan properti ini di sini jika Anda menggunakan CSS eksternal */
+        position: fixed; 
+        right: 20px; 
+        bottom: 150px; 
+        /* Terapkan Animasi */
+        animation: float-wa 2s ease-in-out infinite;
+        /* Hapus properti transform: scale(1.1) dari onmouseover/onmouseout jika Anda ingin hanya gerakan naik-turun */
+    }
+
+    .whatsapp-float:hover {
+    transform: scale(1.1) translateY(-10px); /* Membesar dan tetap sedikit naik saat di-hover */
+}
+
 </style>
 @endpush
 
 @push('scripts')
 <script>
+     function handleWhatsAppClick(rawNumber) {
+        // ... (Logika konversi 0 ke 62) ...
+        
+        let finalNumber = rawNumber;
+        if (rawNumber.startsWith('0')) {
+            finalNumber = '62' + rawNumber.substring(1);
+        }
+        finalNumber = finalNumber.replace(/[^0-9]/g, '');
+
+        window.open('https://wa.me/' + finalNumber, '_blank');
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         // Floating labels animation
         const inputs = document.querySelectorAll('.modern-input');
@@ -575,6 +652,25 @@
                 input.parentElement.querySelector('.floating-label').style.color = '#667eea';
                 input.parentElement.querySelector('.floating-label').style.fontWeight = '600';
             }
+            const waButton = document.querySelector('.whatsapp-float');
+        if (waButton) {
+            let isUp = true;
+            const floatDistance = 10; // Jarak naik turun 10px
+            const intervalTime = 1000; // Interval 1 detik (2 detik untuk siklus penuh)
+
+            setInterval(() => {
+                if (isUp) {
+                    // Naik (Naik 10px, menggunakan transisi CSS untuk kehalusan)
+                    waButton.style.transition = 'transform 1s ease-in-out';
+                    waButton.style.transform = 'translateY(-' + floatDistance + 'px)';
+                } else {
+                    // Turun
+                    waButton.style.transition = 'transform 1s ease-in-out';
+                    waButton.style.transform = 'translateY(0)';
+                }
+                isUp = !isUp; // Balikkan status
+            }, intervalTime);
+        }
         });
 
         // Form validation
@@ -724,6 +820,7 @@
                 alert('Mohon pilih tingkat prioritas.');
                 return false;
             }
+            
         });
 
     });

@@ -888,10 +888,10 @@ section {
   z-index: -1; /* Penting: Letakkan di belakang konten hero, tapi di depan latar belakang gradient */
 
   background: 
-    linear-gradient(to right, rgba(0, 38, 255, 0.8) 0%, rgba(9, 137, 124, 0.8) 100%), /* Gradient di atas gambar */
-    url(../../../img/background.png); /* Gambar di bawah gradient */
-  background-size: cover; /* Atau contain, sesuai kebutuhan Anda */
-  background-position: center; /* Atau sesuai kebutuhan Anda */
+     linear-gradient(to right, rgba(0, 38, 255, 0.811) 0%, rgba(9, 137, 124, 0.658) 100%),/* Gradient di atas gambar */
+    url(../../../img/hero-bg-fix.jpg); /* Gambar di bawah gradient */
+  background-size: cover ; /* Atau contain, sesuai kebutuhan Anda */
+  background-position: center -100px; /* Atau posisi lain sesuai kebutuhan */
   background-repeat: no-repeat;
 }
 @media screen and (max-width: 992px) {
@@ -915,6 +915,12 @@ section {
         padding-top: 50px; 
     }
     */
+    /* Targetkan elemen pseudo hanya di mobile */
+    .hero-section::before {
+      background-size: cover auto;
+        /* Kembali ke tengah penuh (50%) untuk tinggi 350px */
+        background-position: 25% 100%; /* center = 50% (Horizontal), 50% (Vertikal) */
+    }
 }
 
 .hero-section,
@@ -926,6 +932,12 @@ section {
 .hero-section.inner-page {
   height: 60vh;
   min-height: 0;
+}
+
+.hero-section.inner-page::before {
+    /* Menimpa posisi Y agar tidak terpotong parah */
+    background-position: center 50%; 
+    /* Menarik bagian tengah gambar ke tengah vertikal wadah 60vh */
 }
 
 .hero-section.inner-page .hero-text {

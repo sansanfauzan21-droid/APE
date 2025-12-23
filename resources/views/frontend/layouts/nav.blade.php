@@ -20,6 +20,8 @@
                 <li><a href="{{ route('frontend.legalitas.index') }}">Legalitas Perusahaan</a></li>
                 <li><a href="{{ route('frontend.legalitas.index') }}#sertifikat">Sertifikat Perusahaan</a></li>
                 <li><a href="{{ route('frontend.legalitas.regulasi') }}">Regulasi Perusahaan</a></li>
+                <li><a href="{{ route('frontend.legalitas.alat-ukur') }}">Alat Ukur</a></li>
+                <li><a href="{{ route('frontend.legalitas.alat-bantu') }}">Alat Bantu</a></li>
             </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Contact Us</span> <i class="bi bi-chevron-down"></i></a>
@@ -28,6 +30,13 @@
                 <li><a href="{{ route('frontend.contact-us.keluhankendala') }}">Keluhan Dan Banding</a></li>
             </ul>
         </li>
+        <li class="dropdown"><a href="#"><span>Masuk Sebagai</span> <i class="bi bi-chevron-down"></i></a>
+    <ul>
+        <li><a href="{{ route('admin.login') }}">LOGIN ADMIN PANEL</a></li>
+        <li><a href="https://siujang.esdm.go.id/Pelayanan-Perizinan" target="_blank">BADAN USAHA SI UJANG GATRIK</a></li>
+        <li><a href="https://siujang.esdm.go.id/Login" target="_blank">TT DAN PJT SI UJANG GATRIK</a></li>
+    </ul>
+</li>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
 </nav>

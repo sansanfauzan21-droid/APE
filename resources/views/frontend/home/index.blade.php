@@ -34,7 +34,7 @@
         /* Tambahkan font-weight atau font-size jika diperlukan */
         font-weight: bold;
     ">
-    {{ $heroTitle ? $heroTitle->content : 'Selamat Datang di Aliansi Profilewdwasd' }}
+    {{ $heroTitle ? $heroTitle->content : 'Selamat Datang di Aliansi Profile' }}
 </h1>
                             <p class="mb-5" data-aos="fade-right" data-aos-delay="100">
                                 {{ $heroSubtitle ? $heroSubtitle->content : 'STEP INTO THE FUTURE SAFELY.' }}

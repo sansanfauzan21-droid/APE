@@ -36,8 +36,8 @@ class RolePermissionSeeder extends Seeder
 
         // Assign permissions to roles
         $superAdminRole->syncPermissions($permissions);
-        $adminRole->syncPermissions(['view dashboard', 'manage users', 'manage content', 'view reports']);
-        $editorRole->syncPermissions(['view dashboard', 'manage content']);
-        $userRole->syncPermissions(['view dashboard']);
+        $adminRole->syncPermissions(['lihat dashboard', 'kelola users', 'kelola content', 'lihat laporan']);
+        $editorRole->syncPermissions(['lihat dashboard', 'kelola content']);
+        $userRole->syncPermissions(['lihat dashboard']);
     }
 }

@@ -68,11 +68,18 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:super-admin'])
 });
 
 /* Admin Contact Form Routes */
-Route::prefix('admin-contact')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
+Route::prefix('admin-contact')->name('admin.')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminPanelController::class, 'index'])->name('dashboard');
-    Route::get('/contact-form', [App\Http\Controllers\Admin\ContactFormController::class, 'index'])->name('contact-form.index');
-    Route::get('/contact-form/{id}', [App\Http\Controllers\Admin\ContactFormController::class, 'show'])->name('contact-form.show');
-    Route::post('/contact-form/{id}/reply', [App\Http\Controllers\Admin\ContactFormController::class, 'reply'])->name('contact-form.reply');
+    // My Profile routes for admin and super-admin roles
+    Route::middleware('role:admin|super-admin')->group(function () {
+        Route::get('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'index'])->name('profile.index');
+        Route::put('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+    });
+    Route::middleware('role:admin')->group(function () {
+        Route::get('/contact-form', [App\Http\Controllers\Admin\ContactFormController::class, 'index'])->name('contact-form.index');
+        Route::get('/contact-form/{id}', [App\Http\Controllers\Admin\ContactFormController::class, 'show'])->name('contact-form.show');
+        Route::post('/contact-form/{id}/reply', [App\Http\Controllers\Admin\ContactFormController::class, 'reply'])->name('contact-form.reply');
+    });
 });
 
 /* Company Profile */
@@ -200,6 +207,39 @@ Route::prefix('utilities')->group(function () {
         Route::post('/{id}/reply', 'reply')->name('reply');
         Route::delete('/{id}', 'destroy')->name('destroy');
     });
+
+    /* Company License */
+    Route::controller(App\Http\Controllers\Backend\Utilities\CompanyLicenseController::class)->prefix('company-license')->name('company-license.')->middleware('auth')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{companyLicense}', 'show')->name('show');
+        Route::get('/{companyLicense}/edit', 'edit')->name('edit');
+        Route::put('/{companyLicense}', 'update')->name('update');
+        Route::delete('/{companyLicense}', 'destroy')->name('destroy');
+    });
+
+    /* Alat Ukur */
+    Route::controller(App\Http\Controllers\Backend\Utilities\AlatUkurController::class)->prefix('alat-ukur')->name('alat-ukur.')->middleware('auth')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{alatUkur}', 'show')->name('show');
+        Route::get('/{alatUkur}/edit', 'edit')->name('edit');
+        Route::put('/{alatUkur}', 'update')->name('update');
+        Route::delete('/{alatUkur}', 'destroy')->name('destroy');
+    });
+
+    /* Alat Bantu */
+    Route::controller(App\Http\Controllers\Backend\Utilities\AlatBantuController::class)->prefix('alat-bantu')->name('alat-bantu.')->middleware('auth')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/{alatBantu}', 'show')->name('show');
+        Route::get('/{alatBantu}/edit', 'edit')->name('edit');
+        Route::put('/{alatBantu}', 'update')->name('update');
+        Route::delete('/{alatBantu}', 'destroy')->name('destroy');
+    });
 });
 
 /* Regulations */
@@ -234,6 +274,8 @@ Route::name('frontend.')->group(function () {
     Route::prefix('legalitas')->name('legalitas.')->group(function () {
         Route::controller(App\Http\Controllers\Frontend\LegalitasController::class)->group(function () {
             Route::get('/', 'index')->name('index');
+            Route::get('/alat-ukur', 'alatUkur')->name('alat-ukur');
+            Route::get('/alat-bantu', 'alatBantu')->name('alat-bantu');
         });
         Route::controller(App\Http\Controllers\Frontend\RegulasiController::class)->group(function () {
             Route::get('/regulasi', 'index')->name('regulasi');

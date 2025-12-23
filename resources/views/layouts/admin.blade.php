@@ -261,6 +261,15 @@
                             </a>
                         </li>
 
+                        @if(auth()->user()->hasRole('admin'))
+                        <li class="nav-item">
+                            <a href="{{ route('admin.profile.index') }}" class="nav-link {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>My Profile</p>
+                            </a>
+                        </li>
+                        @endif
+
                         @if(auth()->user()->hasRole('super-admin'))
                         <li class="nav-item">
                             <a href="{{ route('admin.profile.index') }}" class="nav-link {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
@@ -269,7 +278,7 @@
                             </a>
                         </li>
 
-                        @can('manage users')
+                        @can('kelola users')
                         <li class="nav-item {{ request()->routeIs('admin.users.*') ? 'menu-open' : '' }}">
                             <a href="#" class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-users"></i>
@@ -293,7 +302,7 @@
                         @endcan
                         @endif
 
-                        @can('manage roles')
+                        @can('kelola roles')
                         <li class="nav-item">
                             <a href="{{ route('admin.roles.index') }}" class="nav-link {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-user-tag"></i>
@@ -372,6 +381,14 @@
                             </ul>
                         </li>
                         @elseif(auth()->user()->hasRole('admin'))
+                        <!-- My Profile -->
+                        <li class="nav-item">
+                            <a href="{{ route('admin.profile.index') }}" class="nav-link {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>My Profile</p>
+                            </a>
+                        </li>
+
                         <!-- Contact Form Management -->
                         <li class="nav-item">
                             <a href="{{ route('admin.contact-form.index') }}" class="nav-link {{ request()->routeIs('admin.contact-form.*') ? 'active' : '' }}">

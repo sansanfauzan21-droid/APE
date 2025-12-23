@@ -1,4 +1,4 @@
- <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
         <a href="/dashboard" class="app-brand-link">
             <span class="app-brand-logo demo">
@@ -74,6 +74,24 @@
             <a href="{{ route('contact-form.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-message-alt-detail"></i>
                 <div data-i18n="Contact Form">Contact Form</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('utilities/company-license*') || Request::is('company-license*') ? 'active' : '' }}">
+            <a href="{{ route('company-license.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-table"></i>
+                <div data-i18n="Company License">Tabel Perusahaan</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('utilities/alat-ukur*') ? 'active' : '' }}">
+            <a href="{{ route('alat-ukur.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-ruler"></i>
+                <div data-i18n="Alat Ukur">Tabel Alat Ukur</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('utilities/alat-bantu*') ? 'active' : '' }}">
+            <a href="{{ route('alat-bantu.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-wrench"></i>
+                <div data-i18n="Alat Bantu">Tabel Alat Bantu</div>
             </a>
         </li>
     </ul>

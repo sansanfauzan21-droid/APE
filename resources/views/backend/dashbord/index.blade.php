@@ -419,7 +419,7 @@
                                             <small class="opacity-75">Business unit images</small>
                                         </div>
                                     </div>
-                                </a>
+                                </a>  
                             </div>
                         </div>
                     </div>

@@ -43,14 +43,22 @@
             </div>
 
             <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card mb-4" style="border: none;">
-                        <div class="card-body text-center">
-                            <img src="{{ asset('assets/img/aktapendirian.png') }}" alt="Akta Pendirian Perusahaan" class="img-fluid mb-3" style="width: 50%; height: auto; border-radius: 5px;">
-                        </div>
-                    </div>
+    <div class="col-md-8"> 
+        <div style="border: 2px solid #ddd; border-radius: 10px; padding: 25px; background-color: #f9f9f9; text-align: center;">
+            
+            <div class="card" style="border: none; background: transparent;">
+                <div style="border: 2px solid #ddd; border-radius: 5px; padding: 10px; display: inline-block;">
+                    <img src="{{ asset('assets/img/aktapendirian.png') }}"  
+                         alt="Akta Pendirian" 
+                         class="img-fluid d-block mx-auto" 
+                         style="width: 100%; max-width: 500px; height: auto; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 </div>
             </div>
+
+        </div>
+    </div>
+</div>
+
             <div id="sertifikat" class="row mt-5">
                 <div class="container">
             <div class="row justify-content-center text-center mb-5">
@@ -60,35 +68,66 @@
                     </div>
                 </div>
             </div>
-                <div class="col-12">
+                <div class="row justify-content-center">
+    <div class="col-md-8"> 
+        <div style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; background-color: #f9f9f9; text-align: center;">
+            
+            <div class="card mb-4" style="border: none; background: transparent;">
+                <div style="border: 2px solid #ddd; border-radius: 5px; padding: 10px; display: inline-block;">
+                    <img src="{{ asset('assets/img/izin1.png') }}" 
+                         alt="Perizinan Berusaha Berbasis Resiko" 
+                         class="img-fluid d-block mx-auto" 
+                         style="width: 100%; max-width: 500px; height: auto; border-radius: 5px;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+                         <!-- Tabel Perusahaan -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-12">
                     <div style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; background-color: #f9f9f9;">
-                        <div class="row">
-                            <div class="col-md-4 text-center mb-3">
-                                <div style="border: 2px solid #ddd; border-radius: 5px; padding: 10px;">
-                                    <img src="{{ asset('assets/img/izin1.png') }}" alt="Perizinan Berusaha Berbasis Resiko" class="img-fluid mb-2" style="width: 100%; height: auto; border-radius: 5px;">
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center mb-3">
-                                <div style="border: 2px solid #ddd; border-radius: 5px; padding: 10px;">
-                                    <img src="{{ asset('assets/img/izin2.png') }}" alt="Izin" class="img-fluid mb-2" style="width: 100%; height: auto; border-radius: 5px;">
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center mb-3">
-                                <div style="border: 2px solid #ddd; border-radius: 5px; padding: 10px;">
-                                    <img src="{{ asset('assets/img/izin3.png') }}" alt="Sertifikasi" class="img-fluid mb-2" style="width: 100%; height: auto; border-radius: 5px;">
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center mb-3">
-                                <div style="border: 2px solid #ddd; border-radius: 5px; padding: 10px;">
-                                    <img src="{{ asset('assets/img/izin4.png') }}" alt="Lisensi" class="img-fluid mb-2" style="width: 100%; height: auto; border-radius: 5px;">
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center mb-3">
-                                <div style="border: 2px solid #ddd; border-radius: 5px; padding: 10px;">
-                                    <img src="{{ asset('assets/img/izin5.png') }}" alt="Izin" class="img-fluid mb-2" style="width: 100%; height: auto; border-radius: 5px;">
-                                </div>
-                            </div>
+                        <h3 class="text-center mb-4">Tabel Perusahaan</h3>
+                        <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Jenis Perizinan</th>
+                                    <th>Bidang</th>
+                                    <th>Sub Bidang</th>
+                                    <th>No. Sertifikat</th>
+                                    <th>No. Registrasi</th>
+                                    <th>Tanggal Habis Berlaku</th>
+                                    <th>Sisa Masa Berlaku</th>
+                                    <th>Dokumen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($perusahaanData as $data)
+                                <tr>
+                                    <td>{{ $data['no'] }}</td>
+                                    <td>{{ $data['jenis_perizinan'] }}</td>
+                                    <td>{{ $data['bidang'] }}</td>
+                                    <td>{{ $data['sub_bidang'] }}</td>
+                                    <td>{{ $data['no_sertifikat'] }}</td>
+                                    <td>{{ $data['no_registrasi'] }}</td>
+                                    <td>{{ $data['tanggal_habis_berlaku'] }}</td>
+                                    <td>{{ $data['sisa_masa_berlaku'] }}</td>
+                                    <td><a href="{{ $data['dokumen'] }}" class="btn btn-sm btn-primary">Lihat</a></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                         </div>
+                    </div>
+                </div>
+            </div>
+                        </div>
+                    </div>
+                </div>
 
             <div class="row justify-content-center mt-5">
                 <div class="col-md-8 text-center">

@@ -144,12 +144,12 @@
     bottom: 0 !important; 
     margin: 0 !important; 
 
-    /* Style Visual */
+    /* Style Visual */  
    background: linear-gradient(135deg, 
-    #160d08 10%,    /* Warna 1: Mulai lebih awal, opacity penuh */
-    #28efcec0 35%,    /* Warna 2: Transisi lebih lambat dari 10% ke 35% */
-    #318df0 55%,    /* Warna 3: Transisi terjadi dari 35% ke 65% */
-    #f76f1aff 95%);   /* Warna 4: Transisi terakhir */
+    #0a0c89ff 10%,    /* Warna 1: Mulai lebih awal, opacity penuh */
+    #11329fc0 35%,    /* Warna 2: Transisi lebih lambat dari 10% ke 35% */
+    #092f87ff 55%,    /* Warna 3: Transisi terjadi dari 35% ke 65% */
+    #030f35ff 95%);   /* Warna 4: Transisi terakhir */
     color: white; 
     padding: 9px 10px; 
 

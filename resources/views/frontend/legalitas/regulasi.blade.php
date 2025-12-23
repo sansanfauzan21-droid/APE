@@ -52,8 +52,10 @@
                                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(0,123,255,0.3);">
                                         <i class="fas fa-gavel fa-lg" style="color: white;"></i>
                                     </div>
-                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Undang-Undang Ketenagalistrikan</h5>
-                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Regulasi dasar yang mengatur kegiatan di sektor ketenagalistrikan, termasuk pembangunan, pengoperasian, dan pengawasan infrastruktur listrik.</p>
+                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pasal 44 (4) & (5)<br> Undang-Undang No.30 Tahun 2019 Tentang Ketenagalistrikan</br></h5>
+                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;"> Setiap instalasi tenaga listrik yang beroperasi wajib
+                                    memiliki sertifikat laik operasi &  Setiap peralatan dan pemanfaat tenaga listrik wajib
+                                    memenuhi ketentuan standar nasional Indonesia</p>
                                 </div>
                             </div>
                         </div>
@@ -64,8 +66,9 @@
                                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(40,167,69,0.3);">
                                         <i class="fas fa-dollar-sign fa-lg" style="color: white;"></i>
                                     </div>
-                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Tarif Listrik</h5>
-                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Ketentuan mengenai penetapan dan penyesuaian tarif listrik untuk memastikan keseimbangan antara kepentingan konsumen dan penyedia jasa.</p>
+                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pasal 6 & Pasal 7 <br>Jasa Ketenagalistrikan</br></h5>
+                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Menerapkan sistem perizinan berusaha yang didasarkan pada 
+                                        penetapan tingkat risiko dan peringkat skala usaha kegiatan.</p>
                                 </div>
                             </div>
                         </div>
@@ -76,8 +79,10 @@
                                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(255,193,7,0.3);">
                                         <i class="fas fa-shield-alt fa-lg" style="color: white;"></i>
                                     </div>
-                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Standar Keselamatan</h5>
-                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Norma dan standar keselamatan yang harus dipatuhi dalam instalasi, pemeliharaan, dan penggunaan peralatan listrik untuk mencegah risiko kecelakaan.</p>
+                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pasal 3 (1)<br>Usaha Jasa Penunjang Tenaga Listrik</br></h5>
+                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Usaha Jasa Penunjang Ketenagalistrikan (UJPTL) diklasifikasikan menjadi: 
+                                        Konsultansi, Pembangunan dan Pemasangan Instalasi, Pemeriksaan dan Pengujian, 
+                                        Operasi dan Pemeliharaan, dan/atau Penyedia Tenaga Teknik.</p>
                                 </div>
                             </div>
                         </div>
@@ -88,8 +93,9 @@
                                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #17a2b8 0%, #138496 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(23,162,184,0.3);">
                                         <i class="fas fa-leaf fa-lg" style="color: white;"></i>
                                     </div>
-                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Energi Terbarukan</h5>
-                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Kebijakan dan insentif untuk pengembangan energi terbarukan seperti solar, angin, dan hidro untuk mendukung transisi energi berkelanjutan.</p>
+                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pasal 13 (2)<br> Perizinan Berbasis Resiko</br></h5>
+                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Sertifikat Standar adalah pernyataan atau 
+                                        bukti pemenuhan standar pelaksanaan kegiatan usaha.</p>
                                 </div>
                             </div>
                         </div>
@@ -100,8 +106,9 @@
                                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #6f42c1 0%, #5a32a3 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(111,66,193,0.3);">
                                         <i class="fas fa-chart-line fa-lg" style="color: white;"></i>
                                     </div>
-                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pengaturan Pasar Listrik</h5>
-                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Aturan yang mengatur mekanisme pasar listrik, termasuk perdagangan, kompetisi, dan pengawasan untuk efisiensi dan keadilan.</p>
+                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pasal 49 (1)<br>Penyelenggaraan Bidang ESDM</br></h5>
+                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Perizinan Berusaha di bidang ketenagalistrikan meliputi: 
+                                        Usaha Penyediaan Tenaga Listrik dan Usaha Penunjang Tenaga Listrik.</p>
                                 </div>
                             </div>
                         </div>
@@ -112,8 +119,9 @@
                                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(220,53,69,0.3);">
                                         <i class="fas fa-users fa-lg" style="color: white;"></i>
                                     </div>
-                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Perlindungan Konsumen</h5>
-                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Hak dan kewajiban konsumen listrik, termasuk mekanisme penyelesaian sengketa dan jaminan kualitas layanan.</p>
+                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pasal 2<br> Peraturan Menteri ESDM No.5 Tahun 2021</br></h5>
+                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Penyelenggaraan Perizinan Berusaha Berbasis Risiko 
+                                        dilaksanakan melalui sistem perizinan berusaha terintegrasi secara elektronik (OSS RBA).</p>
                                 </div>
                             </div>
                         </div>
@@ -124,8 +132,8 @@
                                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(32,201,151,0.3);">
                                         <i class="fas fa-cogs fa-lg" style="color: white;"></i>
                                     </div>
-                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pengembangan Infrastruktur</h5>
-                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Rencana dan regulasi untuk pembangunan jaringan transmisi dan distribusi listrik guna mendukung pertumbuhan ekonomi dan kebutuhan energi.</p>
+                                    <h5 class="card-title" style="font-weight: 700; color: #333; margin-bottom: 15px; font-size: 1.1em;">Pasal 21<br> Peraturan Menteri ESDM No.12 Tahun 2021</br></h5>
+                                    <p class="card-text" style="color: #666; line-height: 1.6; font-size: 0.95em;">Tenaga Teknik wajib memiliki Sertifikat Kompetensi Tenaga Teknik Ketenagalistrikan (SKTTK).</p>
                                 </div>
                             </div>
                         </div>

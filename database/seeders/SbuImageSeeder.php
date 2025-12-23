@@ -15,32 +15,32 @@ class SbuImageSeeder extends Seeder
     {
         $images = [
             [
-                'image_path' => 'assets/img/legal.png',
-                'alt_text' => 'Sertifikat 1',
+                'image_path' => 'assets/img/sbu/sbu-2OiJA.jpg',
+                'alt_text' => 'Sertifikat Badan Usaha 1',
                 'sort_order' => 1,
                 'status' => true,
             ],
             [
-                'image_path' => 'assets/img/legal.png',
-                'alt_text' => 'Sertifikat 2',
+                'image_path' => 'assets/img/sbu/sbu-DSvZG.jpg',
+                'alt_text' => 'Sertifikat Badan Usaha 2',
                 'sort_order' => 2,
                 'status' => true,
             ],
             [
-                'image_path' => 'assets/img/legal.png',
-                'alt_text' => 'Sertifikat 3',
+                'image_path' => 'assets/img/sbu/sbu-Hqia5.jpg',
+                'alt_text' => 'Sertifikat Badan Usaha 3',
                 'sort_order' => 3,
                 'status' => true,
             ],
             [
-                'image_path' => 'assets/img/legal.png',
-                'alt_text' => 'Sertifikat 4',
+                'image_path' => 'assets/img/sbu/sbu-k02lR.jpg',
+                'alt_text' => 'Sertifikat Badan Usaha 4',
                 'sort_order' => 4,
                 'status' => true,
             ],
             [
-                'image_path' => 'assets/img/legal.png',
-                'alt_text' => 'Sertifikat 5',
+                'image_path' => 'assets/img/sbu/sbu-l0tIO.jpg',
+                'alt_text' => 'Sertifikat Badan Usaha 5',
                 'sort_order' => 5,
                 'status' => true,
             ],

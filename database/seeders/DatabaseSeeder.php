@@ -34,8 +34,8 @@ class DatabaseSeeder extends Seeder
         
         // Panggilan Seeder lainnya
         $this->call([
-            // HomeContentSeeder::class,
-            // SbuImageSeeder::class,
+            HomeContentSeeder::class,
+            SbuImageSeeder::class,
         ]);
     }
 }

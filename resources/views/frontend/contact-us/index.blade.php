@@ -49,15 +49,14 @@
                 <div class="col-lg-4 mb-5" data-aos="fade-right">
                     <div class="contact-info-wrapper">
                         <!-- Address Card -->
-                        <div class="contact-card" style="background: white; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 30px; padding: 30px; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; transform: perspective(1200px) rotateX(5deg) rotateY(-3deg) rotateZ(1deg); transform-style: preserve-3d;" onmouseover="this.style.transform='perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-10px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.2), 0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='perspective(1200px) rotateX(5deg) rotateY(-3deg) rotateZ(1deg)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.08)'">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(102,126,234,0.05) 0%, rgba(118,75,162,0.05) 100%); border-radius: 20px; transform: translateZ(-20px);"></div>
+                        <div class="contact-card" style="background: white; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 30px; padding: 30px; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); position: relative;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(0,0,0,0.2), 0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.08)'">
                             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
                             <div class="card-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(102,126,234,0.3);">
                                 <i class="fas fa-map-marker-alt fa-lg" style="color: white;"></i>
                             </div>
                             <h5 style="color: #333; font-weight: 700; margin-bottom: 15px; font-size: 1.1em;">Alamat</h5>
-                            <a href="#map-section" style="color: #666; text-decoration: none; transition: color 0.3s; cursor: pointer;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#666'">
-                                <p style="line-height: 1.6; margin-bottom: 0;">{{ $company && $company->address ? $company->address : 'Jl. Pinus Raya No. 133, Perumahan Pinus Regency, Kel. Babakan Penghulu, Kec. Cinambo, Kota Bandung' }}</p>
+                            <a href="" style="color: #666; text-decoration: none; transition: color 0.3s; cursor: pointer;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#666'">
+                                <p style="color: #666; margin-top: 10px; font-size: 0.9em;">{{ $company && $company->address ? $company->address : 'Jl. Pinus Raya No. 133, Perumahan Pinus Regency, Kel. Babakan Penghulu, Kec. Cinambo, Kota Bandung' }}</p>
                             </a>
                         </div>
 
@@ -67,9 +66,14 @@
                             <div class="card-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(40,167,69,0.3);">
                                 <i class="fas fa-phone fa-lg" style="color: white;"></i>
                             </div>
-                            <h5 style="color: #333; font-weight: 700; margin-bottom: 15px; font-size: 1.1em;">Telepon</h5>
-                            <span onclick="handlePhoneClick('{{ preg_replace('/\D/', '', $company && $company->phone_number ? $company->phone_number : '+62811205411') }}')" style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.1em; transition: color 0.3s; cursor: pointer;" onmouseover="this.style.color='#20c997'">{{ $company && $company->phone_number ? $company->phone_number : '+62 811205411' }}</span>
-                            <p style="color: #666; margin-top: 10px; font-size: 0.9em;">Klik untuk menghubungi via telepon</p>
+                            <h5 style="color: #333; font-weight: 700; margin-bottom: 15px; font-size: 1.1em;">WhatsApp</h5>
+                            <span 
+                                onclick="handleWhatsAppClick('{{ preg_replace('/[^0-9]/', '', $company && $company->phone_number ? $company->phone_number : '62811205411') }}')" 
+                                style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.1em; transition: color 0.3s; cursor: pointer;" 
+                                onmouseover="this.style.color='#20c997'">
+                                {{ $company && $company->phone_number ? $company->phone_number : '+62 811205411' }}
+                            </span>
+                            <p style="color: #666; margin-top: 10px; font-size: 0.9em;">Klik untuk chat via WhatsApp</p>
                         </div>
 
                         <!-- Email Card -->
@@ -156,6 +160,35 @@
                 </div>
             </div>
         </div>
+
+    <!-- /*whatsapp button*/ -->
+    <a 
+        href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $company && $company->phone_number ? $company->phone_number : '62811205411') }}" 
+        class="whatsapp-float" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        data-aos="zoom-in"
+        data-aos-delay="600"
+        style="
+            background-color: #25D366; /* Warna WA */
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: fixed; 
+            right: 20px; 
+            bottom: 150px; 
+            z-index: 10000; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s;
+        "
+        onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 8px 15px rgba(0, 0, 0, 0.4)'"
+        onmouseout="this.style.transform='scale(1.0)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.4)'">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
     </section>
 @endsection
 
@@ -238,11 +271,72 @@
             height: 300px !important;
         }
     }
+
+    /* Penyesuaian Mobile: membuatnya sedikit lebih kecil */
+    @media (max-width: 768px) {
+        /* ... (CSS mobile Anda yang sudah ada) ... */
+        
+        /* Tambahkan ini untuk mobile */
+        .whatsapp-float {
+            width: 50px !important; 
+            height: 50px !important;
+            right: 15px !important;
+            bottom: 15px !important;
+        }
+        .whatsapp-float i {
+            font-size: 1.5em !important; /* Ikon lebih kecil */
+        }
+    }
+
+    /* DEFINISI KEYFRAMES UNTUK GERAKAN NAIK-TURUN */
+    @keyframes float-wa {
+        0% {
+            /* Posisi awal: 0% dari gerakan */
+            transform: translateY(0); 
+        }
+        50% {
+            /* Posisi tengah: Naik 10px */
+            transform: translateY(-10px); 
+        }
+        100% {
+            /* Posisi akhir: Kembali ke 0% */
+            transform: translateY(0); 
+        }
+    }
+
+    /* Terapkan animasi pada tombol floating */
+    .whatsapp-float {
+        /* Tambahkan properti ini di sini jika Anda menggunakan CSS eksternal */
+        position: fixed; 
+        right: 20px; 
+        bottom: 150px; 
+        /* Terapkan Animasi */
+        animation: float-wa 2s ease-in-out infinite;
+        /* Hapus properti transform: scale(1.1) dari onmouseover/onmouseout jika Anda ingin hanya gerakan naik-turun */
+    }
+
+    .whatsapp-float:hover {
+    transform: scale(1.1) translateY(-10px); /* Membesar dan tetap sedikit naik saat di-hover */
+}
+
 </style>
 @endpush
 
 @push('scripts')
 <script>
+
+    function handleWhatsAppClick(rawNumber) {
+        // ... (Logika konversi 0 ke 62) ...
+        
+        let finalNumber = rawNumber;
+        if (rawNumber.startsWith('0')) {
+            finalNumber = '62' + rawNumber.substring(1);
+        }
+        finalNumber = finalNumber.replace(/[^0-9]/g, '');
+
+        window.open('https://wa.me/' + finalNumber, '_blank');
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         // Floating labels animation
         const inputs = document.querySelectorAll('.modern-input');
@@ -325,23 +419,25 @@
             observer.observe(mapSection);
         }
 
-        // Handle phone click - works on both mobile and desktop
-        function handlePhoneClick(phoneNumber) {
-            // Check if it's a mobile device
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // Mobile: use tel: protocol
-                window.location.href = 'tel:' + phoneNumber;
-            } else {
-                // Desktop: copy to clipboard and show message
-                navigator.clipboard.writeText(phoneNumber).then(function() {
-                    alert('Nomor telepon telah disalin ke clipboard: ' + phoneNumber);
-                }).catch(function(err) {
-                    alert('Nomor telepon: ' + phoneNumber + '\nSilakan salin nomor ini secara manual.');
-                });
-            }
+        const waButton = document.querySelector('.whatsapp-float');
+        if (waButton) {
+            let isUp = true;
+            const floatDistance = 10; // Jarak naik turun 10px
+            const intervalTime = 1000; // Interval 1 detik (2 detik untuk siklus penuh)
+
+            setInterval(() => {
+                if (isUp) {
+                    // Naik (Naik 10px, menggunakan transisi CSS untuk kehalusan)
+                    waButton.style.transition = 'transform 1s ease-in-out';
+                    waButton.style.transform = 'translateY(-' + floatDistance + 'px)';
+                } else {
+                    // Turun
+                    waButton.style.transition = 'transform 1s ease-in-out';
+                    waButton.style.transform = 'translateY(0)';
+                }
+                isUp = !isUp; // Balikkan status
+            }, intervalTime);
         }
-
-
     });
 </script>
 @endpush

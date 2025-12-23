@@ -30,8 +30,10 @@ rel="stylesheet">
  <link href="{{ asset('assets/frontend/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
 <link href="{{ asset('assets/frontend/assets/css/style.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
     /* 1. PENGATURAN BACKGROUND BODY (FULL IMAGE) */
     body {
         /* Pertahankan background image Anda */

@@ -53,7 +53,7 @@ class ContactUsController extends Controller
 
             // Coba kirim email, tapi jangan biarkan error menghentikan proses
             try {
-                Mail::to('fauzanarif211104@gmail.com')->send(new ContactFormMail($data));
+                Mail::to('office.aliansi@gmail.com')->send(new ContactFormMail($data));
                 \Log::info('Contact form email sent successfully');
             } catch (\Exception $emailException) {
                 \Log::warning('Contact form email failed, but data saved: ' . $emailException->getMessage());
